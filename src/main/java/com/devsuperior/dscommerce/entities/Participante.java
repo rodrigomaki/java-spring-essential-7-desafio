@@ -8,7 +8,7 @@ public class Participante {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String name;
 
     @Column(unique = true)
@@ -17,17 +17,17 @@ public class Participante {
     public Participante() {
     }
 
-    public Participante(Long id, String name, String email) {
+    public Participante(Integer id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
