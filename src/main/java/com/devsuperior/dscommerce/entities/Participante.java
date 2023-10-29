@@ -2,6 +2,9 @@ package com.devsuperior.dscommerce.entities;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "tb_participante")
 public class Participante {
@@ -13,6 +16,9 @@ public class Participante {
 
     @Column(unique = true)
     private String email;
+
+    @ManyToMany(mappedBy = "participantes")
+    private Set<Atividade> atividades = new HashSet<>();
 
     public Participante() {
     }
